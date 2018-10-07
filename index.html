@@ -1,7 +1,13 @@
 
 <div id="card">
     <header>{{ title }}</header>
-    <div>{{ content }}</div>
+    <div>
+        <input type="text" id="itemForm" v-on:keypress.enter='addItem'>
+        <button v-on:click="addItem">Add {{ title }}</button>
+    </div>
+    <ul>
+        <li v-for="(item, index) in items"> {{ item.text }} <button v-on:click="deleteItem(index)">x {{index}}</button> </li>
+    </ul>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
