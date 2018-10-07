@@ -6,7 +6,10 @@
         <button v-on:click="addItem">Add {{ title }}</button>
     </div>
     <ul>
-        <li v-for="(item, index) in items"> {{ item.text }} <button v-on:click="deleteItem(index)">x {{index}}</button> </li>
+        <li v-for="(item, index) in items"> 
+            {{ item.text | capitalize }} <button v-on:click="deleteItem(index)">x {{index}}</button> 
+            <span>Description: {{ item.text | undercase }} </span>  
+        </li>
     </ul>
 </div>
 
